@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://r2h67426m4kq"]
+
+[ext_resource type="PackedScene" uid="uid://x7krrd534olk" path="res://scenes/planet_button.tscn" id="1_4n6ay"]
+[ext_resource type="Texture2D" uid="uid://c2hlxvmpn0p3w" path="res://assets/image 5.png" id="2_1arcy"]
+
+[node name="Earth_button" instance=ExtResource("1_4n6ay")]
+planet_type = "Earth"
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource("2_1arcy")

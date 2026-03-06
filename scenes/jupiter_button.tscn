@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckcl21e00v2rd"]
+
+[ext_resource type="PackedScene" uid="uid://x7krrd534olk" path="res://scenes/planet_button.tscn" id="1_p8ysy"]
+
+[node name="Jupiter_button" instance=ExtResource("1_p8ysy")]
+planet_type = "Jupiter"
