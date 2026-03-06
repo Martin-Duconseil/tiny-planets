@@ -9,12 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
+	$Total_points.text = "Total points: " + str(Global.total_points)
 	
-	if Global.planet_description == "Jupiter":
-		$Description.text = "Planet Info
-							Jupiter
-							20ft"
-	if Global.planet_description == "Earth":
-		$Description.text = "Planet Info
-							Earth
-							30ft"
+	
+	if Global.planet_clicked == true:
+		Global.total_points += 1
