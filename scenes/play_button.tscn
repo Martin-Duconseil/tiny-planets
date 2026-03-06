@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjpftf6vu8spq"]
+
+[ext_resource type="PackedScene" uid="uid://pe7ckv5x357n" path="res://scenes/button.tscn" id="1_benoo"]
+
+[node name="Play_Button" instance=ExtResource("1_benoo")]
+button_type = "Play"

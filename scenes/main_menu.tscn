@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhcbl3rak1puh"]
+
+[ext_resource type="Script" uid="uid://b6se0kry3132n" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dfhf5sfldgs38" path="res://assets/Tiny planets - Menu.png" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://cjpftf6vu8spq" path="res://scenes/play_button.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://bnbkb2anoq85e" path="res://scenes/credits_button.tscn" id="5_8ln24"]
+[ext_resource type="PackedScene" uid="uid://c4cfxmsvritpf" path="res://scenes/settings_button.tscn" id="6_rtw2f"]
+
+[node name="Main_menu" type="Node2D"]
+script = ExtResource("1_8ln24")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_l6cm7")
+
+[node name="Play_Button" parent="." instance=ExtResource("2_ekxnf")]
+position = Vector2(-392, -16)
+
+[node name="Settings_Button" parent="." instance=ExtResource("6_rtw2f")]
+position = Vector2(-392, 112)
+
+[node name="Credits_Button" parent="Settings_Button" instance=ExtResource("5_8ln24")]
+position = Vector2(0, 128)
