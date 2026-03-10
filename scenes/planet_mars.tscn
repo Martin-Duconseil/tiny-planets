@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8an26jicnbr8"]
+
+[ext_resource type="PackedScene" uid="uid://bjtdtf0qxgaa2" path="res://scenes/planet.tscn" id="1_awf31"]
+
+[node name="Planet_mars" instance=ExtResource("1_awf31")]
