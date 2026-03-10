@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn8km677uy8m6"]
+[gd_scene load_steps=14 format=3 uid="uid://cn8km677uy8m6"]
 
 [ext_resource type="Texture2D" uid="uid://c0q1bbhgfuyrq" path="res://assets/background_1.png" id="1_0wcw4"]
 [ext_resource type="Texture2D" uid="uid://bwj8jpk6p2xov" path="res://assets/lines.png" id="2_5m4q6"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cfdgwk3qh2eys" path="res://scenes/planet_dos.tscn" id="5_vsh3c"]
 [ext_resource type="PackedScene" uid="uid://dcnqmcu65w18v" path="res://scenes/planet_home.tscn" id="6_jlqwp"]
 [ext_resource type="PackedScene" uid="uid://cp6e1mblguts7" path="res://scenes/planet_four.tscn" id="7_wwgyy"]
+[ext_resource type="PackedScene" uid="uid://8gjp7hsdlu5m" path="res://scenes/button_pop.tscn" id="8_5gqha"]
+[ext_resource type="PackedScene" uid="uid://b4q8hw87j77ox" path="res://scenes/button_ships.tscn" id="9_raa3b"]
 
 [sub_resource type="Gradient" id="Gradient_wwgyy"]
 colors = PackedColorArray(1, 0.9019608, 0.5019608, 1, 0, 0, 0, 1)
@@ -19,11 +21,15 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
-[node name="map_scene" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwgyy"]
+bg_color = Color(1, 1, 1, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(0.7, 0.7)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gqha"]
+bg_color = Color(0.9440512, 0, 0.1464333, 1)
+
+[node name="map_scene" type="Node2D"]
+metadata/_edit_vertical_guides_ = [1648.0, 0.0]
+metadata/_edit_horizontal_guides_ = [0.0, 928.0]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(913, 477.50003)
@@ -63,3 +69,53 @@ position = Vector2(1272, 224)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.04968398, 0.08465322, 0.29112855, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Food_label" type="Label" parent="UI"]
+offset_left = 1368.0
+offset_top = 16.0
+offset_right = 1427.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 25
+text = "Food"
+
+[node name="Food_bar" type="ProgressBar" parent="UI"]
+offset_left = 1368.0
+offset_top = 64.0
+offset_right = 1623.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wwgyy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5gqha")
+value = 50.0
+show_percentage = false
+
+[node name="Pop_label" type="Label" parent="UI"]
+offset_left = 1048.0
+offset_top = 16.0
+offset_right = 1180.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 25
+text = "Population"
+
+[node name="Pop_bar" type="ProgressBar" parent="UI"]
+offset_left = 1048.0
+offset_top = 64.0
+offset_right = 1303.0
+offset_bottom = 94.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wwgyy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5gqha")
+value = 50.0
+show_percentage = false
+
+[node name="Button_pop" parent="UI" instance=ExtResource("8_5gqha")]
+position = Vector2(1512, 204)
+scale = Vector2(0.8, 0.8)
+
+[node name="Button_ships" parent="UI/Button_pop" instance=ExtResource("9_raa3b")]
+position = Vector2(-39.999996, 124.999985)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.7, 0.7)

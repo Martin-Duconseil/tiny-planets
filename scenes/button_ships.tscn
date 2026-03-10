@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4q8hw87j77ox"]
+
+[ext_resource type="PackedScene" uid="uid://pe7ckv5x357n" path="res://scenes/button.tscn" id="1_23oab"]
+[ext_resource type="Texture2D" uid="uid://b437nj4ight7k" path="res://assets/ships_normal.png" id="2_7g6ve"]
+[ext_resource type="Texture2D" uid="uid://gwlgycktrfc2" path="res://assets/ships_hover.png" id="3_a81pf"]
+[ext_resource type="Texture2D" uid="uid://ebu8t1jkuwh1" path="res://assets/ships_clicked.png" id="4_r112d"]
+
+[node name="Button_ships" instance=ExtResource("1_23oab")]
+texture_normal = ExtResource("2_7g6ve")
+texture_hover = ExtResource("3_a81pf")
+texture_clicked = ExtResource("4_r112d")
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource("2_7g6ve")

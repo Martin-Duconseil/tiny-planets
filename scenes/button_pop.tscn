@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://8gjp7hsdlu5m"]
+
+[ext_resource type="PackedScene" uid="uid://pe7ckv5x357n" path="res://scenes/button.tscn" id="1_7mg6e"]
+[ext_resource type="Texture2D" uid="uid://cnfdvailb7l1w" path="res://assets/pop_normal.png" id="2_s4gnc"]
+[ext_resource type="Texture2D" uid="uid://bpgs2fiu4liqg" path="res://assets/pop_hover.png" id="3_1x6u4"]
+[ext_resource type="Texture2D" uid="uid://cylsngbd4uui3" path="res://assets/pop_clicked.png" id="4_jhe0v"]
+
+[node name="Button_pop" instance=ExtResource("1_7mg6e")]
+texture_normal = ExtResource("2_s4gnc")
+texture_hover = ExtResource("3_1x6u4")
+texture_clicked = ExtResource("4_jhe0v")
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource("2_s4gnc")

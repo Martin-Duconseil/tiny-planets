@@ -4,6 +4,7 @@ extends Node2D
 
 @export var texture_normal: Resource
 @export var texture_hover: Resource
+@export var texture_clicked: Resource
 
 var button_hovered = false
 var button_clicked = false
@@ -15,6 +16,7 @@ func _process(_delta):
 	if button_hovered:
 		$Texture.texture = texture_hover
 		if Input.is_action_pressed("left_click"):
+			$Texture.texture = texture_clicked
 			button_clicked = true
 	else:
 		$Texture.texture = texture_normal
