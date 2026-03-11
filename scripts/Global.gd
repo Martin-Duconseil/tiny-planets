@@ -6,10 +6,21 @@ var planet_clicked_type:String = ""
 var planet_switch:String = ""
 var planet_description:String = ""
 var total_points:int = 0
-var total_ships:int = 10
 var ship_pool:Array
 var rng = RandomNumberGenerator.new()
 var save_path:String = "user://tiny-planets.json"
+
+var total_ships:int = 10
+var population:int
+var star_frag:int
+var game_data:Dictionary = {
+	"total_points":total_points,
+	"population":population,
+	"star_frag":star_frag,
+	"total_ships":total_ships
+	
+}
+
 const SHIP = preload("uid://cj2xtofpv1c4v")
 var ship:Node
 
@@ -24,6 +35,7 @@ func load_ship_pool():
 func save_game():
 	var save_data:Dictionary = {
 		##Add anything here you want to save, can be more dicts or single values
+		"game_data":game_data#can keep adding dict entries for more data without changing this, load will need some data
 	}
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	if file == null:
@@ -44,7 +56,12 @@ func load_game():
 	if !typeof(data) == TYPE_DICTIONARY:
 		push_error("invalid save data")
 		return 
-	 
+
 	#Clear dicts and any other values you want to reset with this code: life = data.get("life")
 	#or better example: total_points = data.get("total_points")
+	population = data.get("population")
+	star_frag = data.get("star_frag")
+	total_ships = data.get("total_ships")
+	total_points = data.get("total_points")
+	
 	
