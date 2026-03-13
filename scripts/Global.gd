@@ -4,7 +4,26 @@ var menu_switch:String = ""
 var planet_clicked:bool = false
 var planet_clicked_type:String = ""
 var planet_switch:String = ""
-var planet_description:String = ""
+var planet_name:String = ""
+var food_level:int = 0
+
+# Galileo stats
+var food_level_Galileo:int = 0
+var population_level_Galileo:int = 15
+
+# Archaeus stats
+var food_level_Archaeus:int = 0
+var population_level_Archaeus:int = 15
+
+# Juniel stats
+var food_level_Juniel:int = 0
+var population_level_Juniel:int = 15
+
+# Orion stats
+var food_level_Orion:int = 0
+var population_level_Orion:int = 15
+
+
 var total_points:int = 0
 var ship_pool:Array
 var save_path:String = "user://tiny-planets.json"
