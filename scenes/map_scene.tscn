@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn8km677uy8m6"]
+[gd_scene load_steps=15 format=3 uid="uid://cn8km677uy8m6"]
 
 [ext_resource type="Texture2D" uid="uid://c0q1bbhgfuyrq" path="res://assets/background_1.png" id="1_0wcw4"]
+[ext_resource type="Script" uid="uid://bpx10cveucc6r" path="res://scripts/map_scene.gd" id="1_u73mt"]
 [ext_resource type="Texture2D" uid="uid://bwj8jpk6p2xov" path="res://assets/lines.png" id="2_5m4q6"]
 [ext_resource type="Texture2D" uid="uid://cpulqpu5i8rwm" path="res://assets/planet_10.png" id="3_5m4q6"]
 [ext_resource type="PackedScene" uid="uid://8an26jicnbr8" path="res://scenes/planet_mars.tscn" id="4_vlip3"]
@@ -28,6 +29,7 @@ bg_color = Color(1, 1, 1, 1)
 bg_color = Color(0.9440512, 0, 0.1464333, 1)
 
 [node name="map_scene" type="Node2D"]
+script = ExtResource("1_u73mt")
 metadata/_edit_vertical_guides_ = [1648.0, 0.0]
 metadata/_edit_horizontal_guides_ = [0.0, 928.0]
 
@@ -112,10 +114,17 @@ show_percentage = false
 [node name="Button_pop" parent="UI" instance=ExtResource("8_5gqha")]
 position = Vector2(1512, 204)
 scale = Vector2(0.8, 0.8)
+button_type = "pop"
 
 [node name="Button_ships" parent="UI/Button_pop" instance=ExtResource("9_raa3b")]
 position = Vector2(-39.999996, 124.999985)
+button_type = "ship"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(0.7, 0.7)
+
+[node name="SpawnedShips" type="Node2D" parent="."]
+
+[node name="ShipSpawnLocation" type="Marker2D" parent="."]
+position = Vector2(1631, 646)

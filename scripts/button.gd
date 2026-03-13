@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(_delta):
 	if button_hovered:
 		$Texture.texture = texture_hover
-		if Input.is_action_pressed("left_click"):
+		if Input.is_action_just_pressed("left_click"):
 			$Texture.texture = texture_clicked
 			button_clicked = true
 			
@@ -23,6 +23,16 @@ func _process(_delta):
 		$Texture.texture = texture_normal
 	if button_clicked:
 		Global.menu_switch = button_type
+		if button_type == "ship":
+			ship_spawning()
+			
+func ship_spawning():
+	get_tree().current_scene.spawned_ships.add_child(Global.ship_pool[0])
+	Global.ship_pool[0].position = get_tree().current_scene.ship_spawn_location.global_position
+	Global.ship_pool.append(Global.ship_pool[0])
+	Global.ship_pool.pop_front()
+	print(Global.ship_pool)
+	button_clicked = false
 
 func _on_area_2d_mouse_entered():
 	button_hovered = true

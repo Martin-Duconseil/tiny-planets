@@ -7,7 +7,6 @@ var planet_switch:String = ""
 var planet_description:String = ""
 var total_points:int = 0
 var ship_pool:Array
-var rng = RandomNumberGenerator.new()
 var save_path:String = "user://tiny-planets.json"
 
 var total_ships:int = 10
@@ -24,12 +23,12 @@ var game_data:Dictionary = {
 const SHIP = preload("uid://cj2xtofpv1c4v")
 var ship:Node
 
+func _ready() -> void:
+	load_ship_pool()
+
 func load_ship_pool():
-	
 	for s in total_ships:
 		ship = SHIP.instantiate()
-		get_tree().current_scene.add_child.call_deferred(ship)
-		ship.position = Vector2i(rng.randi_range(-100, 100,), rng.randi_range(-100, 100))
 		ship_pool.append(ship)
 
 func save_game():
