@@ -1,13 +1,25 @@
 extends Node
+signal game_tick
 
 var menu_switch:String = ""
 var planet_clicked:bool = false
 var planet_clicked_type:String = ""
 var planet_switch:String = ""
-var planet_description:String = ""
+var planet_name:String = ""
+var food_level:int = 0
+var ship_price:int = 20
+var hide_ship_price:bool = false
+
+# planet stats
+var planet_stats:Dictionary = {
+	"Galileo":{"food":30, "pop":15},
+	"Archaeus":{"food":20, "pop":40},
+	"Juniel":{"food":70, "pop":95},
+	"Orion":{"food":50, "pop":30}
+}
+
 var total_points:int = 0
 var ship_pool:Array
-var rng = RandomNumberGenerator.new()
 var save_path:String = "user://tiny-planets.json"
 
 var total_ships:int = 10
@@ -24,12 +36,12 @@ var game_data:Dictionary = {
 const SHIP = preload("uid://cj2xtofpv1c4v")
 var ship:Node
 
+func _ready() -> void:
+	load_ship_pool()
+
 func load_ship_pool():
-	
 	for s in total_ships:
 		ship = SHIP.instantiate()
-		get_tree().current_scene.add_child.call_deferred(ship)
-		ship.position = Vector2i(rng.randi_range(-100, 100,), rng.randi_range(-100, 100))
 		ship_pool.append(ship)
 
 func save_game():

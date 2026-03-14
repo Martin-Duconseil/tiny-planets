@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj2xtofpv1c4v"]
+[gd_scene load_steps=6 format=3 uid="uid://cj2xtofpv1c4v"]
 
 [ext_resource type="Script" uid="uid://dyi4ut1yxt500" path="res://scripts/ships/ship.gd" id="1_3cxh5"]
 [ext_resource type="Texture2D" uid="uid://opiqe2yme0i8" path="res://sprites/ship_temp.png" id="2_hkrho"]
@@ -18,8 +18,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hkrho"]
+
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_3cxh5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k8gom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hkrho")

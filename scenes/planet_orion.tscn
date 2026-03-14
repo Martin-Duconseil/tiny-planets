@@ -3,13 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bjtdtf0qxgaa2" path="res://scenes/planet.tscn" id="1_jj6ej"]
 [ext_resource type="Texture2D" uid="uid://fmmhqgm08g31" path="res://assets/planet_1.png" id="2_jbyde"]
 
-[node name="Planet_four" instance=ExtResource("1_jj6ej")]
-scale = Vector2(1.5, 1.5)
-planet_type = "Four"
+[node name="Planet_orion" instance=ExtResource("1_jj6ej")]
+planet_type = "Orion"
 
 [node name="Hover" parent="." index="0"]
-scale = Vector2(0.45, 0.45)
+scale = Vector2(1.2, 1.2)
 
 [node name="Texture" parent="." index="1"]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_jbyde")

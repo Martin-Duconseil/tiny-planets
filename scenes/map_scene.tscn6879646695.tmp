@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://bpx10cveucc6r" path="res://scripts/map_scene.gd" id="1_u73mt"]
 [ext_resource type="Texture2D" uid="uid://bwj8jpk6p2xov" path="res://assets/lines.png" id="2_5m4q6"]
 [ext_resource type="Texture2D" uid="uid://cpulqpu5i8rwm" path="res://assets/planet_10.png" id="3_5m4q6"]
-[ext_resource type="PackedScene" uid="uid://8an26jicnbr8" path="res://scenes/planet_galileo.tscn" id="4_vlip3"]
-[ext_resource type="PackedScene" uid="uid://cfdgwk3qh2eys" path="res://scenes/planet_archaeus.tscn" id="5_vsh3c"]
-[ext_resource type="PackedScene" uid="uid://dcnqmcu65w18v" path="res://scenes/planet_juniel.tscn" id="6_jlqwp"]
-[ext_resource type="PackedScene" uid="uid://cp6e1mblguts7" path="res://scenes/planet_orion.tscn" id="7_wwgyy"]
+[ext_resource type="PackedScene" uid="uid://8an26jicnbr8" path="res://scenes/planet_mars.tscn" id="4_vlip3"]
+[ext_resource type="PackedScene" uid="uid://cfdgwk3qh2eys" path="res://scenes/planet_dos.tscn" id="5_vsh3c"]
+[ext_resource type="PackedScene" uid="uid://dcnqmcu65w18v" path="res://scenes/planet_home.tscn" id="6_jlqwp"]
+[ext_resource type="PackedScene" uid="uid://cp6e1mblguts7" path="res://scenes/planet_four.tscn" id="7_wwgyy"]
 [ext_resource type="PackedScene" uid="uid://8xuof5vrbod4" path="res://scenes/ui.tscn" id="9_raa3b"]
 
 [sub_resource type="Gradient" id="Gradient_wwgyy"]
@@ -48,16 +48,16 @@ shadow_color = Color(0.17622206, 0.09248691, 0.011466309, 0)
 texture = SubResource("GradientTexture2D_5gqha")
 texture_scale = 28.65
 
-[node name="Planet_galileo" parent="." instance=ExtResource("4_vlip3")]
+[node name="Planet_mars" parent="." instance=ExtResource("4_vlip3")]
 position = Vector2(128, 736)
 
-[node name="Planet_archaeus" parent="." instance=ExtResource("5_vsh3c")]
+[node name="Planet_dos" parent="." instance=ExtResource("5_vsh3c")]
 position = Vector2(592, 240)
 
-[node name="Planet_juniel" parent="." instance=ExtResource("6_jlqwp")]
+[node name="Planet_home" parent="." instance=ExtResource("6_jlqwp")]
 position = Vector2(1016, 672)
 
-[node name="Planet_orion" parent="." instance=ExtResource("7_wwgyy")]
+[node name="Planet_four" parent="." instance=ExtResource("7_wwgyy")]
 position = Vector2(1272, 224)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -72,4 +72,4 @@ zoom = Vector2(0.7, 0.7)
 [node name="SpawnedShips" type="Node2D" parent="."]
 
 [node name="ShipSpawnLocation" type="Marker2D" parent="."]
-position = Vector2(1140, 846)
+position = Vector2(1631, 646)
