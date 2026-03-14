@@ -5,12 +5,17 @@ extends Node2D
 var planet_hovered = false
 
 func _ready():
+	Global.game_tick.connect(check_pop) ##add callable(func) to check total pop vs food count, if food > pop, pop increases. else decrease
 	$Hover.visible = false
+		
+func check_pop():
+	print(planet_type)
 		
 func _process(_delta):
 	if planet_hovered:
 		$Hover.visible = true
 		Global.planet_name = planet_type
+		
 		if Input.is_action_just_pressed("left_click"):
 			Global.planet_clicked = true
 			Global.planet_clicked_type = planet_type

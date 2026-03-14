@@ -1,4 +1,5 @@
 extends Node
+signal game_tick
 
 var menu_switch:String = ""
 var planet_clicked:bool = false

@@ -43,7 +43,7 @@ offset_bottom = -200.0
 theme_override_font_sizes/font_size = 30
 text = "Population_label"
 
-[node name="Button" type="Button" parent="."]
+[node name="GoToButton" type="Button" parent="."]
 offset_left = -56.0
 offset_top = -136.0
 offset_right = 256.0
@@ -53,3 +53,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_eq6ha")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fyrap")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fyrap")
 text = "Send ship to "
+
+[connection signal="pressed" from="GoToButton" to="." method="_on_go_to_button_pressed"]

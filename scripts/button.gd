@@ -31,7 +31,6 @@ func ship_spawning():
 	Global.ship_pool[0].position = get_tree().current_scene.ship_spawn_location.global_position
 	Global.ship_pool.append(Global.ship_pool[0])
 	Global.ship_pool.pop_front()
-	print(Global.ship_pool)
 	button_clicked = false
 
 func _on_area_2d_mouse_entered():

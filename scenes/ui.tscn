@@ -77,13 +77,11 @@ value = 50.0
 show_percentage = false
 
 [node name="Button_pop" parent="." instance=ExtResource("1_x4jx1")]
-visible = false
 position = Vector2(1512, 204)
 scale = Vector2(0.8, 0.8)
 button_type = "pop"
 
 [node name="Button_ships" parent="Button_pop" instance=ExtResource("2_yev5y")]
-visible = false
 position = Vector2(-39.999996, 124.999985)
 button_type = "ship"
 

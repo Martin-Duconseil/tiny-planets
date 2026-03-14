@@ -72,4 +72,4 @@ zoom = Vector2(0.7, 0.7)
 [node name="SpawnedShips" type="Node2D" parent="."]
 
 [node name="ShipSpawnLocation" type="Marker2D" parent="."]
-position = Vector2(1631, 646)
+position = Vector2(1140, 846)
