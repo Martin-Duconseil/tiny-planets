@@ -31,7 +31,7 @@ func _process(_delta):
 		else:
 			Global.planet_clicked = false
 			Global.planet_clicked_type = ""
-
+	
 func _on_area_2d_mouse_entered():
 	planet_hovered = true
 

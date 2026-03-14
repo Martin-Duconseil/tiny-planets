@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh0fe1oti33ml"]
+[gd_scene load_steps=11 format=3 uid="uid://bh0fe1oti33ml"]
 
 [ext_resource type="Texture2D" uid="uid://5mp6vkuky6v2" path="res://assets/panel.png" id="1_d0rks"]
 [ext_resource type="Script" uid="uid://body6gkp73gdd" path="res://scripts/panel_info.gd" id="1_fyrap"]
+[ext_resource type="Script" uid="uid://gmifcoqxvps6" path="res://scripts/add_population.gd" id="3_8l7nv"]
+[ext_resource type="Script" uid="uid://b7k0vvvmj37v0" path="res://scripts/buy_ship_button.gd" id="4_t8old"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq6ha"]
 bg_color = Color(0.111999996, 0.17920002, 0.56, 1)
@@ -11,6 +13,14 @@ bg_color = Color(0.46822643, 0.5757836, 0.94263244, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyrap"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jguau"]
+bg_color = Color(0.111999996, 0.17920002, 0.56, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fw5u"]
+bg_color = Color(0.46822643, 0.5757836, 0.94263244, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iv64l"]
+
 [node name="panel_info" type="Node2D"]
 script = ExtResource("1_fyrap")
 
@@ -18,6 +28,7 @@ script = ExtResource("1_fyrap")
 position = Vector2(192.75005, -139.99995)
 scale = Vector2(0.35862622, 1.010239)
 texture = ExtResource("1_d0rks")
+metadata/_edit_lock_ = true
 
 [node name="Planet_label" type="Label" parent="."]
 offset_left = -56.0
@@ -45,13 +56,51 @@ text = "Population_label"
 
 [node name="GoToButton" type="Button" parent="."]
 offset_left = -56.0
-offset_top = -136.0
-offset_right = 256.0
-offset_bottom = -40.0
+offset_top = 96.0
+offset_right = 304.0
+offset_bottom = 168.0
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_eq6ha")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fyrap")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fyrap")
 text = "Send ship to "
 
+[node name="Add_population" type="Button" parent="."]
+offset_left = -56.0
+offset_top = -144.0
+offset_right = 195.0
+offset_bottom = -72.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jguau")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5fw5u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iv64l")
+text = "Add population"
+script = ExtResource("3_8l7nv")
+button_type = "Add_population"
+
+[node name="Buy_ship" type="Button" parent="."]
+offset_left = -56.0
+offset_top = -24.0
+offset_right = 128.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jguau")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5fw5u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iv64l")
+text = "Buy ship"
+script = ExtResource("4_t8old")
+button_type = "Buy_ship"
+
+[node name="Ship_price" type="Label" parent="Buy_ship"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 8.0
+offset_right = 496.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 25
+text = "x20 star framents"
+vertical_alignment = 1
+
 [connection signal="pressed" from="GoToButton" to="." method="_on_go_to_button_pressed"]
+[connection signal="pressed" from="Add_population" to="Add_population" method="_on_pressed"]
+[connection signal="pressed" from="Buy_ship" to="Buy_ship" method="_on_pressed"]

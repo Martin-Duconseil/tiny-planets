@@ -10,6 +10,9 @@ func _ready() -> void:
 func _process(_delta):
 	if planet_hovered:
 		Global.planet_description = planet_type
+		Global.planet_hovered = planet_type
+		
+		print(Global.planet_hovered)
 		if Input.is_action_just_pressed("left_click"):
 			Global.planet_clicked = true
 			Global.planet_clicked_type = planet_type

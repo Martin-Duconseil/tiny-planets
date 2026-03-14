@@ -7,13 +7,15 @@ var planet_clicked_type:String = ""
 var planet_switch:String = ""
 var planet_name:String = ""
 var food_level:int = 0
+var ship_price:int = 20
+var hide_ship_price:bool = false
 
 # planet stats
 var planet_stats:Dictionary = {
-	"Galileo":{"food":0, "pop":15},
-	"Archaeus":{"food":0, "pop":15},
-	"Juniel":{"food":0, "pop":15},
-	"Orion":{"food":0, "pop":15}
+	"Galileo":{"food":30, "pop":15},
+	"Archaeus":{"food":20, "pop":40},
+	"Juniel":{"food":70, "pop":95},
+	"Orion":{"food":50, "pop":30}
 }
 
 var total_points:int = 0

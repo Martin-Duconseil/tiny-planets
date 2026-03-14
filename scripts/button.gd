@@ -25,6 +25,8 @@ func _process(_delta):
 		Global.menu_switch = button_type
 		if button_type == "ship":
 			ship_spawning()
+		if button_type == "play":
+			get_tree().change_scene_to_file('res://scenes/map_scene.tscn')
 			
 func ship_spawning():
 	get_tree().current_scene.spawned_ships.add_child(Global.ship_pool[0])

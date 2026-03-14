@@ -2,16 +2,21 @@ extends Node2D
 var ship_index:int = 0
 
 func _ready() -> void:
-	pass 
+	pass
 
 
 func _process(_delta: float) -> void:
+	$Buy_ship/Ship_price.visible = not Global.hide_ship_price
+	
 	if Global.planet_name == "":#if no planet selected return null
 		return
-	$GoToButton.text = "Send ship to " + Global.planet_name
+	$GoToButton.text = "Send food to " + Global.planet_name
 	$Planet_label.text = "Planet " + Global.planet_name
 	$Food_label.text = "Food: " + str(Global.planet_stats[Global.planet_name]["food"])
 	$Population_label.text = "Population: " + str(Global.planet_stats[Global.planet_name]["pop"])
+	
+	
+
 
 
 func _on_go_to_button_pressed() -> void:

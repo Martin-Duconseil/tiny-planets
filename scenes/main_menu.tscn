@@ -22,6 +22,7 @@ metadata/_edit_lock_ = true
 
 [node name="Play_Button" parent="." instance=ExtResource("2_ekxnf")]
 position = Vector2(-392, -16)
+button_type = "play"
 
 [node name="Settings_Button" parent="." instance=ExtResource("6_rtw2f")]
 position = Vector2(-392, 112)

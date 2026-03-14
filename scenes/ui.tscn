@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://8xuof5vrbod4"]
+[gd_scene load_steps=7 format=3 uid="uid://8xuof5vrbod4"]
 
-[ext_resource type="PackedScene" uid="uid://8gjp7hsdlu5m" path="res://scenes/button_pop.tscn" id="1_x4jx1"]
 [ext_resource type="Script" uid="uid://dgwbriaqdkhfe" path="res://scripts/ui.gd" id="1_yev5y"]
 [ext_resource type="Texture2D" uid="uid://bvl1usuni185b" path="res://sprites/stars_temp.png" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://c0q1bbhgfuyrq" path="res://assets/background_1.png" id="2_wm3ai"]
-[ext_resource type="PackedScene" uid="uid://b4q8hw87j77ox" path="res://scenes/button_ships.tscn" id="2_yev5y"]
 [ext_resource type="PackedScene" uid="uid://bh0fe1oti33ml" path="res://scenes/panel_info.tscn" id="6_8dubc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwgyy"]
@@ -75,15 +73,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_wwgyy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5gqha")
 value = 50.0
 show_percentage = false
-
-[node name="Button_pop" parent="." instance=ExtResource("1_x4jx1")]
-position = Vector2(1512, 204)
-scale = Vector2(0.8, 0.8)
-button_type = "pop"
-
-[node name="Button_ships" parent="Button_pop" instance=ExtResource("2_yev5y")]
-position = Vector2(-39.999996, 124.999985)
-button_type = "ship"
 
 [node name="panel_info" parent="." instance=ExtResource("6_8dubc")]
 position = Vector2(1296.0001, 762)
