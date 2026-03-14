@@ -18,7 +18,6 @@ func _ready() -> void:
 		orion
 	]
 	
-
 func _process(delta: float) -> void:
 	game_ticks()
 	

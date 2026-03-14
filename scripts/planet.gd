@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var planet_type = ""
+var rng:RandomNumberGenerator = RandomNumberGenerator.new()
+var pop_increase_amount:int = 100
 
 var planet_hovered = false
 
@@ -9,7 +11,12 @@ func _ready():
 	$Hover.visible = false
 		
 func check_pop():
-	print(planet_type)
+	if Global.planet_stats[planet_type]["food"] > Global.planet_stats[planet_type]["pop"]:
+		Global.planet_stats[planet_type]["pop"] += pop_increase_amount + randi_range(-20, 20)
+		Global.planet_stats[planet_type]["food"] -= Global.planet_stats[planet_type]["pop"]
+	else:
+		var remove_pop = Global.planet_stats[planet_type]["pop"] /4
+		Global.planet_stats[planet_type]["pop"] -= remove_pop
 		
 func _process(_delta):
 	if planet_hovered:

@@ -8,22 +8,13 @@ var planet_switch:String = ""
 var planet_name:String = ""
 var food_level:int = 0
 
-# Galileo stats
-var food_level_Galileo:int = 0
-var population_level_Galileo:int = 15
-
-# Archaeus stats
-var food_level_Archaeus:int = 0
-var population_level_Archaeus:int = 15
-
-# Juniel stats
-var food_level_Juniel:int = 0
-var population_level_Juniel:int = 15
-
-# Orion stats
-var food_level_Orion:int = 0
-var population_level_Orion:int = 15
-
+# planet stats
+var planet_stats:Dictionary = {
+	"Galileo":{"food":0, "pop":15},
+	"Archaeus":{"food":0, "pop":15},
+	"Juniel":{"food":0, "pop":15},
+	"Orion":{"food":0, "pop":15}
+}
 
 var total_points:int = 0
 var ship_pool:Array

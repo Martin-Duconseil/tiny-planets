@@ -29,10 +29,10 @@ scale = Vector2(3.5, 3.5)
 texture = ExtResource("2_gdt2y")
 
 [node name="Stars_label" type="Label" parent="."]
-offset_left = 1335.9999
-offset_top = 40.0
-offset_right = 1567.9999
-offset_bottom = 82.0
+offset_left = 1336.0
+offset_top = 42.0
+offset_right = 1568.0
+offset_bottom = 84.0
 theme_override_font_sizes/font_size = 30
 text = "Star fragments: "
 
