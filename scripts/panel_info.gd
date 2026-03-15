@@ -2,7 +2,7 @@ extends Node2D
 var ship_index:int = 0
 
 func _ready() -> void:
-	pass
+	visible = false
 
 
 func _process(_delta: float) -> void:
@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	$Planet_label.text = "Planet " + Global.planet_name
 	$Food_label.text = "Food: " + str(Global.planet_stats[Global.planet_name]["food"])
 	$Population_label.text = "Population: " + str(Global.planet_stats[Global.planet_name]["pop"])
-	
+	visible = true
 	
 
 

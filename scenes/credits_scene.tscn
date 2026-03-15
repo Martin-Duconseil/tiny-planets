@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://73o0lst123gl"]
+
+[ext_resource type="Script" uid="uid://de0exveanhk8j" path="res://scripts/credits_scene.gd" id="1_s6411"]
+[ext_resource type="Texture2D" uid="uid://b8v84j5ke6mdm" path="res://assets/background_2.png" id="1_t4kbm"]
+[ext_resource type="Texture2D" uid="uid://c8j53qewe46rx" path="res://assets/planet_11.png" id="2_utjet"]
+[ext_resource type="Texture2D" uid="uid://7huv0204m2dg" path="res://assets/planet_2.png" id="3_s6411"]
+[ext_resource type="Texture2D" uid="uid://w51pd63kfs6o" path="res://assets/planet_9.png" id="4_iboe8"]
+[ext_resource type="PackedScene" uid="uid://c5wj47v4arkq7" path="res://scenes/back_button.tscn" id="5_utjet"]
+
+[node name="Credits_scene" type="Node2D"]
+script = ExtResource("1_s6411")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2.2737368e-13, 1.1368684e-13)
+scale = Vector2(0.6841624, 0.6841624)
+texture = ExtResource("1_t4kbm")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -512.0
+offset_top = -280.0
+offset_right = 312.0
+offset_bottom = -115.0
+theme_override_font_sizes/font_size = 110
+text = "Tiny Planets"
+
+[node name="Planets" type="Sprite2D" parent="."]
+position = Vector2(400.00003, 67)
+rotation = 0.2617994
+scale = Vector2(1.6724138, 1.6724138)
+texture = ExtResource("2_utjet")
+
+[node name="Planets2" type="Sprite2D" parent="."]
+position = Vector2(104, 40)
+rotation = 0.2617994
+scale = Vector2(0.30170703, 0.30170706)
+texture = ExtResource("3_s6411")
+
+[node name="Planets3" type="Sprite2D" parent="."]
+position = Vector2(190.41736, 222.84833)
+rotation = -0.2617994
+scale = Vector2(1.0265037, 1.0265038)
+texture = ExtResource("4_iboe8")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -512.0
+offset_top = -96.0
+offset_right = 41.0
+offset_bottom = -27.0
+theme_override_font_sizes/font_size = 40
+text = "Dev: Mastersujo and Nytram"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -512.0
+offset_top = -16.0
+offset_right = -136.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 40
+text = "Art: The Bardic Fox"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -512.0
+offset_top = 64.0
+offset_right = -264.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 40
+text = "Music: Keeg"
+
+[node name="Back_button" parent="." instance=ExtResource("5_utjet")]
+position = Vector2(-448, 200)

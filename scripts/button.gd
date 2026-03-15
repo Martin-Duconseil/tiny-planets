@@ -26,7 +26,11 @@ func _process(_delta):
 		if button_type == "ship":
 			ship_spawning()
 		if button_type == "play":
-			get_tree().change_scene_to_file('res://scenes/map_scene.tscn')
+			get_tree().change_scene_to_file('res://scenes/intro_scene.tscn')
+		if button_type == "credits":
+			get_tree().change_scene_to_file('res://scenes/credits_scene.tscn')
+		if button_type == "back":
+			get_tree().change_scene_to_file('res://scenes/main_menu.tscn')
 			
 func ship_spawning():
 	get_tree().current_scene.spawned_ships.add_child(Global.ship_pool[0])

@@ -12,12 +12,14 @@ func _process(_delta):
 		if button_type == "Buy_ship":
 			button_clicked = false
 			buy_ship()
+	$Ship_price.text = "x" + str(Global.ship_price) + " star fragments"
 			
 func buy_ship():
-	if Global.star_frag >= 20:
-		Global.star_frag -= 20
+	if Global.star_frag >= Global.ship_price:
+		Global.star_frag -= Global.ship_price
 		ship_spawning()
 		text = "Ship bought!"
+		Global.ship_price += randi_range(5,10)
 	else:
 		text = "Not enough star fragments"
 	

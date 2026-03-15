@@ -98,7 +98,7 @@ offset_top = 8.0
 offset_right = 496.0
 offset_bottom = 72.0
 theme_override_font_sizes/font_size = 25
-text = "x20 star framents"
+text = "x20 star fragments"
 vertical_alignment = 1
 
 [connection signal="pressed" from="GoToButton" to="." method="_on_go_to_button_pressed"]

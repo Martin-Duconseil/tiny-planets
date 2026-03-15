@@ -11,6 +11,8 @@ var tick:int
 var tick_time = 800
 
 func _ready() -> void:
+	$Music.play()
+	
 	planet_list = [
 		galileo,
 		archaeus,
@@ -18,8 +20,9 @@ func _ready() -> void:
 		orion
 	]
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	game_ticks()
+	
 	
 func game_ticks():
 	tick += 1
@@ -27,3 +30,7 @@ func game_ticks():
 		tick = 0
 		Global.game_tick.emit()
 		print("tick")
+
+
+func _on_music_finished() -> void:
+	$Music.play()

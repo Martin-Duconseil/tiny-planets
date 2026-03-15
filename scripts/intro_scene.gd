@@ -1,5 +1,6 @@
 extends Node2D
 
+var start_button_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,10 +8,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if Global.menu_switch == "play":
-		get_tree().change_scene_to_file("res://scenes/intro_scene.tscn")
-		Global.menu_switch = ""
-	if Global.menu_switch == "Credits":
+func _process(_delta: float) -> void:
+	if start_button_pressed:
 		get_tree().change_scene_to_file("res://scenes/map_scene.tscn")
-		Global.menu_switch = ""
+
+
+
+func _on_start_button_pressed() -> void:
+	start_button_pressed = true
