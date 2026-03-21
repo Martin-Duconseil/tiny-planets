@@ -8,6 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Global.menu_switch == "Play":
+	if Global.menu_switch == "play":
+		get_tree().change_scene_to_file("res://scenes/intro_scene.tscn")
+		Global.menu_switch = ""
+	if Global.menu_switch == "Credits":
 		get_tree().change_scene_to_file("res://scenes/map_scene.tscn")
 		Global.menu_switch = ""

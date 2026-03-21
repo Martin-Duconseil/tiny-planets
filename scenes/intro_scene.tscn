@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://db0h8a24ms7h3"]
+
+[ext_resource type="Script" uid="uid://dduroti6f7lg7" path="res://scripts/intro_scene.gd" id="1_0y5sa"]
+[ext_resource type="Texture2D" uid="uid://b8v84j5ke6mdm" path="res://assets/background_2.png" id="1_xmg1o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmvey"]
+bg_color = Color(0.111999996, 0.17920002, 0.56, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmg1o"]
+bg_color = Color(0.46822643, 0.5757836, 0.94263244, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0y5sa"]
+
+[node name="Intro_scene" type="Node2D"]
+script = ExtResource("1_0y5sa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(816, 464)
+texture = ExtResource("1_xmg1o")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1656.0
+offset_bottom = 936.0
+color = Color(0.06, 0.06, 0.06, 0.6901961)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 232.0
+offset_top = 64.0
+offset_right = 1576.0
+offset_bottom = 840.0
+theme_override_font_sizes/font_size = 30
+text = "You are the guardian of the universe and must manage the resources
+of a galaxy consisting of four planets:
+
+- Galileo: The red planet, closest to the sun
+- Archaeus: The small planet with copper mountains
+- Juniel: The blue and lush planet
+- Orion: The largest, bluish planet
+
+Your goal is to maintain a balance between population and food supply.
+To do this, you’ll need to collect star fragments to purchase ships.
+These ships will be able to transport food to the planets.
+
+Good luck!
+"
+vertical_alignment = 1
+
+[node name="Start_button" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 800.0
+offset_right = 1000.0
+offset_bottom = 872.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmvey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xmg1o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0y5sa")
+text = "Start game"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.7, 0.7)
+
+[connection signal="pressed" from="Start_button" to="." method="_on_start_button_pressed"]

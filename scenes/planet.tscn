@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjtdtf0qxgaa2"]
+[gd_scene load_steps=9 format=3 uid="uid://bjtdtf0qxgaa2"]
 
 [ext_resource type="Script" uid="uid://ymmdijuqmq1s" path="res://scripts/planet.gd" id="1_h8ms6"]
 [ext_resource type="Texture2D" uid="uid://cknbrre7ocy23" path="res://assets/outline.png" id="2_ggt7d"]
@@ -7,6 +7,61 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8ms6"]
 radius = 144.22205
 
+[sub_resource type="Animation" id="Animation_0k1rn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ggt7d"]
+resource_name = "pressed"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_48b8c"]
+resource_name = "released"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.95, 0.95), Vector2(1, 1), Vector2(0.95, 0.95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48b8c"]
+_data = {
+&"RESET": SubResource("Animation_0k1rn"),
+&"pressed": SubResource("Animation_ggt7d"),
+&"released": SubResource("Animation_48b8c")
+}
+
 [node name="Planet" type="Node2D"]
 script = ExtResource("1_h8ms6")
 planet_type = "Mars"
@@ -14,7 +69,6 @@ planet_type = "Mars"
 [node name="Hover" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(3.8146973e-06, 3.8146973e-06)
-scale = Vector2(1.54, 1.54)
 texture = ExtResource("2_ggt7d")
 
 [node name="Texture" type="Sprite2D" parent="."]
@@ -26,7 +80,10 @@ texture = ExtResource("2_h8ms6")
 visible = false
 shape = SubResource("CircleShape2D_h8ms6")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_48b8c")
+}
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfdgwk3qh2eys"]
+
+[ext_resource type="PackedScene" uid="uid://bjtdtf0qxgaa2" path="res://scenes/planet.tscn" id="1_xrg8u"]
+[ext_resource type="Texture2D" uid="uid://w51pd63kfs6o" path="res://assets/planet_9.png" id="2_8fwti"]
+
+[node name="Planet_archaeus" instance=ExtResource("1_xrg8u")]
+planet_type = "Archaeus"
+
+[node name="Hover" parent="." index="0"]
+scale = Vector2(0.55, 0.55)
+
+[node name="Texture" parent="." index="1"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_8fwti")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://8an26jicnbr8"]
+
+[ext_resource type="PackedScene" uid="uid://bjtdtf0qxgaa2" path="res://scenes/planet.tscn" id="1_awf31"]
+
+[node name="Planet_galileo" instance=ExtResource("1_awf31")]
+planet_type = "Galileo"
+
+[node name="Hover" parent="." index="0"]
+scale = Vector2(0.95, 0.95)
+
+[node name="Texture" parent="." index="1"]
+scale = Vector2(0.6, 0.6)
